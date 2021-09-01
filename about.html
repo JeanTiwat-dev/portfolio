@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js" integrity="sha512-ttHne44lbbucAUVjyStgbDTTqvNVQdIGN9gqZeai69i4OXSDNjlBd1tyCVXI/a/DqITpj9gXi84dcyG2vz4jhw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Tiwat's resume</title>
+</head>
+<body>
+    <div class="containn h-full flex flex-col align-center">
+        <div class="nav flex items-center justify-between">
+            <div class="name flex items-center p-3">
+                <span style="margin-right: .5rem;">ทิวัตถ์</span>
+                <span style="color: #EBB51F;">ภาคภูมิไพศาล</span >
+            </div>
+            <div class="menu flex items-center p-3">
+                <a href="index.html" class="home m-3 cursor-pointer">หน้าหลัก</a>
+                <a href="about.html" class="thispage m-3 cursor-pointer" style="color: #EBB51F;">เกี่ยวกับ</a>
+                <a href="project.html" class="m-3 cursor-pointer">โปรเจคต์</a>
+                <a href="contact.html" class="m-3 cursor-pointer">ติดต่อ</a>
+            </div>
+        </div>
+        <div class="content flex justify-between px-28 py-44 overflow-hidden">
+            <div class="txt flex flex-col justify-center mr-16">
+                <p class="mb-12 text-4xl opacity-0" style="font-weight: 700;" id="dd">เกี่ยวกับ</p>
+                <p class="mb-6 text-lg opacity-0" id="dd2">สวัสดีครับ ผม นาย ทิวัตถ์ ภาคภูมิไพศาล กำลังศึกษาระดับมหาลัยวิทยาลัยชั้นปีที่ 2 สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง คณะเทคโนโลยีสารสนเทศ สาขาเทคโนโลยีสารสนเทศ</p>
+                <p class="mb-6 text-lg opacity-0" id="dd3">สาเหตุที่เข้าคณะนี้ เพราะ ในปัจจุบันและในอนาคต เทคโนโลยีจะเข้าไปอยู่ในทุกๆสิ่งในชีวิตของเรา เทคโนโลยีจะมีความสำคัญมากขึ้นอย่างมาก และความต้องการในตลาดจะต้องมากตามไปด้วย ผมจึงตั้งใจว่าจะเรียนคณะนี้ เพื่อรองรับความต้องการต้องตลาดแรงงาน และหลังจากได้เข้ามาศึกษาในคณะเทคโนโลยีสารสนเทศ ผมไม่ผิดหวังเลยครับ เพราะเป็นคณะที่มีอะไรให้ศึกษาเยอะมาก น่าสนใจไปหมด ถ้าย้อนเวลากลับไปเลือกได้ ก็ยังคงเลือกคณะนี้ครับ</p>
+                <p class="mb-6 text-lg opacity-0" id="dd4">และนี่คือความถนัดเล็กๆน้อยๆในด้านโปรแกรมเมอร์ครับ:</p>
+                <div class="flex flex-row w-full justify-around opacity-0" id="dd5">
+                    <ul class="list-disc">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                        <li>Java</li>
+                    </ul>
+                    <ul class="list-disc">
+                        <li>Python</li>
+                        <li>C</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chart" style="height: 50%;">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+        let myChart = document.getElementById("myChart").getContext('2d');
+
+        let massPopChart = new Chart(myChart, {
+            type:'doughnut',
+            data:{
+                labels:['HTML', 'CSS', 'Python', 'Java', 'C', 'Javascript', 'C++'],
+                datasets:[{
+                    label:'Percent(%)',
+                    data:[
+                        20,
+                        20,
+                        20,
+                        15,
+                        12,
+                        10,
+                        3,
+                    ],
+                    backgroundColor:[
+                        '#f94144',
+                        '#f3722c',
+                        '#f8961e',
+                        '#f9c74f',
+                        '#90be6d',
+                        '#43aa8b',
+                        '#577590'
+                    ],
+                    borderwidth:1,
+                    hoverBorderWidth:3,
+                }]
+            },
+            options: {
+                title:{
+                    display: true,
+                    text:'Top languages (Sort by skill)',
+                    fontSize: 15,
+                    position: 'bottom',
+                    fontColor: '#D4E9E9'
+                },
+                legend: {
+                    display: true,
+                    position:'right',
+                    padding: 20,
+                    labels: {
+                        fontColor:'#D4E9E9'
+                    },
+                },
+                layout: {
+                    padding:{
+                        top:100
+                    }
+                }
+            }
+        })
+        setTimeout(() => {
+            document.getElementById('dd').classList.add('dookdik');
+            document.getElementById('dd').classList.remove('opacity-0');
+            setTimeout(() => {
+                document.getElementById('dd2').classList.add('dookdik');
+                document.getElementById('dd2').classList.remove('opacity-0');
+                setTimeout(() => {
+                    document.getElementById('dd3').classList.add('dookdik');
+                    document.getElementById('dd3').classList.remove('opacity-0');
+                    setTimeout(() => {
+                        document.getElementById('dd4').classList.add('dookdik');
+                        document.getElementById('dd4').classList.remove('opacity-0');
+                        setTimeout(() => {
+                        document.getElementById('dd5').classList.add('dookdik');
+                        document.getElementById('dd5').classList.remove('opacity-0');
+                        }, 500);
+                    }, 500);
+                }, 500);
+            }, 500);
+        }, 500);
+
+        setTimeout(() => {
+            document.getElementById('')
+        }, 500);
+    </script>
+</body>
+</html>
