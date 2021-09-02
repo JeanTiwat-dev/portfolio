@@ -31,15 +31,15 @@
                 <p class="mb-6 text-lg opacity-0" id="dd4">และนี่คือความถนัดเล็กๆน้อยๆในด้านโปรแกรมเมอร์ครับ:</p>
                 <div class="flex flex-row w-full justify-around opacity-0" id="dd5">
                     <ul class="list-disc">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Javascript</li>
-                        <li>Java</li>
+                        <li id="html">HTML</li>
+                        <li id="css">CSS</li>
+                        <li id="js">Javascript</li>
+                        <li id="java">Java</li>
                     </ul>
                     <ul class="list-disc">
-                        <li>Python</li>
-                        <li>C</li>
-                        <li>C++</li>
+                        <li id="py">Python</li>
+                        <li id="c">C</li>
+                        <li id="cp">C++</li>
                     </ul>
                 </div>
             </div>
@@ -114,18 +114,13 @@
                     setTimeout(() => {
                         document.getElementById('dd4').classList.add('dookdik');
                         document.getElementById('dd4').classList.remove('opacity-0');
-                        setTimeout(() => {
                         document.getElementById('dd5').classList.add('dookdik');
                         document.getElementById('dd5').classList.remove('opacity-0');
-                        }, 500);
                     }, 500);
                 }, 500);
             }, 500);
         }, 500);
 
-        setTimeout(() => {
-            document.getElementById('')
-        }, 500);
     </script>
 </body>
 </html>

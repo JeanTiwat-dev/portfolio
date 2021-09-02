@@ -9,6 +9,7 @@
     font-family: 'IBM Plex Sans Thai', sans-serif;
     color:#D4E9E9;
     font-weight: 700;
+    user-select: none;
 }
 
 body {
@@ -93,18 +94,6 @@ p{
     }
 }
 
-@keyframes identifier {
-    
-    0% {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .menu {
     background-color: transparent;
     border: none;
@@ -147,3 +136,43 @@ p{
     stroke-width: 6;
 }
 
+
+#html, #css, #js, #java, #py, #c, #cp {
+    transition: all 4s;
+    cursor: default;
+}
+
+#html:hover {
+    color: #f94144;
+    transition: all 0.5s;
+}
+
+#css:hover {
+    color: #f3722c;
+    transition: all 0.5s;
+}
+
+#js:hover {
+    color: #f8961e;
+    transition: all 0.5s;
+}
+
+#java:hover {
+    color: #f9c74f;
+    transition: all 0.5s;
+}
+
+#py:hover {
+    color: #90be6d;
+    transition: all 0.5s;
+}
+
+#c:hover {
+    color: #43aa8b;
+    transition: all 0.5s;
+}
+
+#cp:hover {
+    color: #577590;
+    transition: all 0.5s;
+}
